@@ -1,0 +1,58 @@
+@use "variables/colors";
+
+.bubble {
+    animation: none;
+}
+html {
+    background: colors.$back-color;
+    background: linear-gradient(120deg, rgba(38, 113, 186, 1) 0%, rgba(25, 165, 135, 1) 100%);
+}
+
+.user-data {
+    img {
+        border-radius: 50%;
+        height: 5rem;
+        aspect-ratio: 1/1;
+    }
+    .age {
+        opacity: 0.5;
+    }
+}
+input[type="url"] {
+    display: block;
+    margin: 0.5rem auto !important;
+}
+textarea {
+    resize: none;
+    margin: 0.5rem auto;
+    display: block;
+}
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    margin: 1rem;
+}
+.file-input {
+    background-color: colors.$back-color-tr-02;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tags .checkbox {
+    min-width: 4rem;
+    width: min-content;
+    text-transform: uppercase;
+}
+
+.main-btn {
+    display: block;
+    margin: auto;
+    font-size: 1.3rem;
+    font-weight: bold;
+}

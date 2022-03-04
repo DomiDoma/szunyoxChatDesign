@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup your account</title>
+    <link rel="stylesheet" href="../style/css/main.css">
+    <link rel="stylesheet" href="../style/css/menu.css">
+    <link rel="stylesheet" href="../style/css/elements/bubble.css">
+    <link rel="stylesheet" href="../style/css/setup.css">
+
+</head>
+
+<body>
+
+
+    <header>
+        <button title="Back" class="header-btn" onclick="window.location='login.html'">
+            <img alt="" src="https://img.icons8.com/ios-filled/90/000000/back.png" />
+        </button>
+        Setup
+        <button title="Back" class="header-btn" href="">
+            <img alt="" src="https://img.icons8.com/ios-filled/90/000000/more.png" />
+        </button>
+    </header>
+    <main class="inflow">
+        <section class="user-data card">
+            <div class=" card-header row">
+                <img id="profile-img"
+                    src="https://media.karousell.com/media/photos/products/2022/2/8/big_floppa_1644303126_391dfcc8_progressive.jpg"
+                    alt="">
+                <h3 id="name">Big Floppa</h3>
+                <h3 class="age">21</h3>
+            </div>
+            <p id="email">funny.ears@gmail.com</p>
+            <p id="mobile">+36 30 400 4000</p>
+        </section>
+        <form action="home.html" class="character">
+            <section class="card">
+                <div class="card-header">
+                    <h4>Hobbies and interests</h4>
+                </div>
+
+                <div class="tags">
+                    <div class="btn checkbox">
+                        <input hidden id="hobby1" type="checkbox" name="hobby">
+                        <label for="hobby1">Art</label>
+                    </div>
+                    <div class="btn checkbox">
+                        <input hidden id="hobby2" type="checkbox" name="hobby">
+                        <label for="hobby2">gaming</label>
+                    </div>
+                    <div class="btn checkbox">
+                        <input hidden id="hobby3" type="checkbox" name="hobby">
+                        <label for="hobby3">dev</label>
+                    </div>
+                    <div class="btn checkbox">
+                        <input hidden id="hobby4" type="checkbox" name="hobby">
+                        <label for="hobby4">floppa</label>
+                    </div>
+                    <div class="btn checkbox">
+                        <input hidden id="hobby5" type="checkbox" name="hobby">
+                        <label for="hobby5">sleeping</label>
+                    </div>
+                    <div class="btn checkbox">
+                        <input hidden id="hobby6" type="checkbox" name="hobby">
+                        <label for="hobby6">travel</label>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <p class="desc">We use these to find matching people for you</p>
+                </div>
+            </section>
+            <section class="card">
+                <div class="card-header">
+                    <h4>Add pictures</h4>
+                </div>
+                <div class="file-input-wrapper">
+                    <label class="file-input" for="file">+</label>
+                </div>
+                <input hidden id="file" title="images" type="file" accept="image/png, image/jpeg" multiple>
+                <div class="card-footer">
+                    <p class="desc">Pictures will be shown only with people you matched after chatting.
+                    </p>
+                    <p class="highlight">This is also
+                        true
+                        for
+                        the profile picture</p>
+                </div>
+            </section>
+            <section class="card">
+                <div class="card-header">
+                    <h4>Bio</h4>
+                </div>
+                <textarea placeholder=" " title="bio" name="bio" id="bio" maxlength="240"></textarea>
+                <div class="card-footer">
+                    <p class="desc">Write something about yourself to help others start conversation with you</p>
+                </div>
+            </section>
+            <section class="card">
+                <div class="card-header">
+                    <h4>Add social media</h4>
+                </div>
+                <input id="telegram" placeholder="Telegram" type="url">
+                <input id="discord" placeholder="Discord" type="url">
+                <input id="instagram" placeholder="Instagram" type="url">
+                <input id="facebook" placeholder="Facebook" type="url">
+                <div class="card-footer">
+                    <p class="desc">Links will be shown only with people you matched after chatting</p>
+                </div>
+            </section>
+            <button class="main-btn">Save</button>
+        </form>
+    </main>
+    <div class="bubble"></div>
+    <div class="bubble mid"></div>
+    <div class="bubble big"></div>
+</body>
+
+</html>

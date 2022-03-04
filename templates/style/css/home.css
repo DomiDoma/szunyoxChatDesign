@@ -1,0 +1,61 @@
+html {
+  background: #252525;
+  background: linear-gradient(120deg, #123457 0%, #0d5344 100%);
+}
+
+.greeting h1 {
+  text-align: center;
+}
+
+.dater-info {
+  background-color: rgba(25, 165, 135, 0.5);
+  position: relative;
+  animation: jump 10s cubic-bezier(1, -0.44, 0.19, 1.48) infinite;
+}
+.dater-info .stars {
+  height: 4rem;
+  display: block;
+  margin: 1rem auto 1rem auto;
+  filter: invert(1);
+}
+.dater-info::after {
+  content: "";
+  height: 3rem;
+  width: 120%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  transform: rotate(-45deg);
+  filter: blur(1rem);
+  animation: flash 10s ease infinite;
+}
+
+@keyframes flash {
+  0% {
+    top: 100%;
+    left: 100%;
+  }
+  20% {
+    top: 0;
+    left: -100%;
+  }
+  100% {
+    top: 0;
+    left: -100%;
+  }
+}
+@keyframes jump {
+  5% {
+    transform: scale(1.05);
+  }
+  10% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.bubble {
+  animation: none !important;
+}
+
+/*# sourceMappingURL=home.css.map */

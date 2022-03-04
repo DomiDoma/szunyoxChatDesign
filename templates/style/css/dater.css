@@ -1,0 +1,83 @@
+main section.candidate .user-info {
+  position: fixed;
+  top: 3rem;
+  z-index: 1;
+  width: auto;
+  max-height: 20rem;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+main section.candidate .user-info .user-header {
+  width: 100%;
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+main section.candidate .user-info .user-header #age {
+  margin-left: 0.5rem;
+  opacity: 0.5;
+}
+main section.candidate .user-info h2,
+main section.candidate .user-info .bio {
+  max-height: 10rem;
+  overflow-y: auto;
+}
+main section.candidate .user-info .tags {
+  display: flex;
+  justify-content: left;
+  padding: 0.5rem 0 0 0;
+}
+main section.candidate .user-info .tags .tag {
+  text-decoration: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10rem;
+  padding: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: 0.2em;
+}
+main section.candidate .chat .chat-area {
+  padding-bottom: 8rem;
+}
+main section.candidate .chat .message-input {
+  height: 8rem;
+}
+main section.candidate .reaction {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main section.candidate .reaction button {
+  width: 100%;
+  border-radius: 2rem;
+}
+main section.candidate .reaction button#dislike {
+  border: 2px solid rgba(189, 6, 6, 0.5);
+}
+main section.candidate .reaction button#save {
+  border: 2px solid rgba(25, 165, 135, 0.5);
+}
+main section.candidate .reaction button#like {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background-color: #19a587;
+  color: white;
+}
+@supports not ((backdrop-filter: blur(1rem)) or (-webkit-backdrop-filter: blur(1rem))) {
+  main section.candidate header {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  main section.candidate .user-info {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  main section.candidate .message-input {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+/*# sourceMappingURL=dater.css.map */

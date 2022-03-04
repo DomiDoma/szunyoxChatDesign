@@ -1,0 +1,63 @@
+.bubble {
+  animation: none;
+}
+
+html {
+  background: #252525;
+  background: linear-gradient(120deg, #2671ba 0%, #19a587 100%);
+}
+
+.user-data img {
+  border-radius: 50%;
+  height: 5rem;
+  aspect-ratio: 1/1;
+}
+.user-data .age {
+  opacity: 0.5;
+}
+
+input[type=url] {
+  display: block;
+  margin: 0.5rem auto !important;
+}
+
+textarea {
+  resize: none;
+  margin: 0.5rem auto;
+  display: block;
+}
+
+.file-input-wrapper {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  margin: 1rem;
+}
+
+.file-input {
+  background-color: rgba(37, 37, 37, 0.2);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags .checkbox {
+  min-width: 4rem;
+  width: min-content;
+  text-transform: uppercase;
+}
+
+.main-btn {
+  display: block;
+  margin: auto;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=setup.css.map */

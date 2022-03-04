@@ -1,0 +1,58 @@
+@use "variables/colors";
+.chat {
+    .chat-area {
+        position: fixed;
+        padding-top: 20rem;
+        padding-bottom: 10rem;
+        overflow-y: auto;
+        height: 100vh;
+        display: flex;
+        flex-direction: column-reverse;
+        .message {
+            background-color: colors.$back-color;
+            border-radius: 1rem 1rem 1rem 0;
+            margin: 0rem 1rem 0.8rem 1rem;
+            padding: 0.5rem 1rem 0.5rem 1rem;
+
+            width: 70%;
+        }
+        .message.user {
+            margin: 0rem 1rem 0.8rem auto;
+            background-color: colors.$base-color-tr;
+            border-radius: 1rem 1rem 0 1rem;
+        }
+    }
+
+    .message-input {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0.5rem;
+        border-top: 2px solid rgba(255, 255, 255, 0.1);
+
+        background-color: colors.$back-color-tr;
+        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
+        .input-elements {
+            position: relative;
+        }
+        input {
+            width: 100%;
+            margin: 0;
+            border-radius: 10rem;
+        }
+        .send-btn {
+            position: absolute;
+            right: 0.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 2rem;
+            width: 2rem;
+            img {
+                height: 2rem;
+                filter: invert(1);
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+@use "variables/colors";
+main {
+    section.candidate {
+        .user-info {
+            position: fixed;
+            top: 3rem;
+            z-index: 1;
+            width: auto;
+            max-height: 20rem;
+            margin: 0.5rem;
+            padding: 1rem;
+
+            .user-header {
+                width: 100%;
+                display: flex;
+                #age {
+                    margin-left: 0.5rem;
+                    opacity: 0.5;
+                }
+                padding-bottom: 0.5rem;
+            }
+
+            h2,
+            .bio {
+                max-height: 10rem;
+                overflow-y: auto;
+            }
+
+            .tags {
+                display: flex;
+                justify-content: left;
+                padding: 0.5rem 0 0 0;
+
+                .tag {
+                    text-decoration: none;
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    border-radius: 10rem;
+                    padding: 0.5rem;
+                    border: 2px solid rgba(255, 255, 255, 0.2);
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    margin-right: 0.2em;
+                }
+            }
+        }
+
+        .chat {
+            .chat-area {
+                padding-bottom: 8rem;
+            }
+            .message-input {
+                height: 8rem;
+            }
+        }
+
+        .reaction {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            button {
+                width: 100%;
+                border-radius: 2rem;
+
+                &#dislike {
+                    border: 2px solid rgba(189, 6, 6, 0.5);
+                }
+                &#save {
+                    border: 2px solid colors.$base-color-tr;
+                }
+                &#like {
+                    border: 2px solid rgba(255, 255, 255, 0.2);
+                    background-color: colors.$base-color;
+                    color: white;
+                }
+            }
+        }
+        @supports not ((backdrop-filter: blur(1rem)) or (-webkit-backdrop-filter: blur(1rem))) {
+            header {
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+            .user-info {
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+            .message-input {
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+        }
+    }
+}

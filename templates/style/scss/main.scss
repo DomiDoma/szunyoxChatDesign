@@ -1,0 +1,211 @@
+@use "variables/colors";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    //outline: 1px solid red;
+}
+
+html {
+    min-height: 100vh;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+main {
+    overflow: hidden;
+}
+main.inflow {
+    margin-top: 4rem;
+    margin-bottom: 7rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    width: 100%;
+    height: 3rem;
+    padding: 1rem;
+    background-color: colors.$back-color-tr;
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+}
+
+h3 {
+    margin: 0.5rem;
+}
+
+:any-link {
+    color: colors.$base-color;
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    padding: 0 0.5rem 0 0.5rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    background-color: colors.$back-color-tr;
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: bold;
+    img#logo {
+        height: 2rem;
+        margin: 0.5rem;
+    }
+}
+p {
+    margin: 0.5rem;
+}
+.card {
+    background-color: colors.$back-color-tr;
+    border-radius: 1rem;
+    margin: 1rem;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    .card-header {
+        background-color: colors.$back-color-tr-02;
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0.5em;
+    }
+    .card-footer {
+        background-color: colors.$back-color-tr-02;
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 0.2rem;
+        text {
+            opacity: 0.5;
+        }
+    }
+}
+.checkbox {
+    overflow: hidden;
+    label {
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s ease;
+        background-color: colors.$back-color-tr-02;
+    }
+    input[type="checkbox"]:checked ~ label {
+        background-color: colors.$base-color;
+        animation: checkpop 0.2s ease;
+    }
+}
+
+.highlight {
+    color: colors.$base-color;
+}
+
+button,
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    width: 20rem;
+    border-radius: 2rem;
+    margin: 0.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: 0.2s ease;
+    &:hover,
+    &:focus {
+        background-color: black;
+        color: white;
+    }
+
+    img {
+        height: 1rem;
+        margin: 0.5rem;
+    }
+}
+.checkbox.btn:hover,
+.checkbox.btn:focus {
+    background-color: unset;
+    color: unset;
+}
+
+button#menu {
+    height: 2rem;
+    width: 2rem;
+    background-color: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+textarea {
+    outline: none;
+    height: 2.5rem;
+    width: 20rem;
+    border-radius: 2rem;
+    padding-left: 1rem;
+    margin: 0.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: colors.$back-color-tr-02;
+    color: colors.$base-color;
+    transition: 0.2s ease;
+    &::placeholder {
+        color: white;
+    }
+    &:focus,
+    &:not(:placeholder-shown) {
+        background-color: white;
+    }
+}
+textarea {
+    height: 5rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.main-btn {
+    background-color: colors.$base-color;
+    color: white;
+    height: 4rem;
+}
+.header-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+}
+
+@supports not ((backdrop-filter: blur(1rem)) or (-webkit-backdrop-filter: blur(1rem))) {
+    header {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .card {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}

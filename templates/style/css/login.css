@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+html {
+  background: #252525;
+  background: linear-gradient(120deg, #2671ba 0%, #19a587 100%);
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(37, 37, 37, 0.5);
+  border: 2px solid rgba(224, 224, 224, 0.2);
+  border-radius: 1rem;
+  width: 95%;
+  margin: auto;
+  padding: 1rem;
+  -webkit-backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
+}
+
+a {
+  margin: 0.2rem;
+  font-size: small;
+}
+
+.main-btn {
+  margin: 2rem 0 1rem 0;
+  font-size: larger;
+  font-weight: bold;
+  background-color: #e0e0e0;
+  color: black;
+}
+
+.apple-btn {
+  background-color: black;
+  color: white;
+}
+
+/*# sourceMappingURL=login.css.map */

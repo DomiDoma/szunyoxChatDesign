@@ -1,0 +1,48 @@
+html {
+  background: #131313;
+}
+
+.chat-heads {
+  padding: 0.5rem;
+  overflow: auto;
+}
+.chat-heads .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  min-width: 6rem;
+  margin: 0 1rem 0 0;
+}
+.chat-heads .profile img {
+  margin: 0.5rem 0.5rem 0 0.5rem;
+  border-radius: 50%;
+  height: 4rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.active-chats .chat {
+  display: flex;
+  margin: 0.5rem;
+}
+.active-chats .chat h4 {
+  margin: 0.5rem;
+}
+.active-chats .chat p {
+  font-size: small;
+}
+.active-chats .chat img {
+  margin: 0.5rem;
+  border-radius: 50%;
+  height: 3rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.active-chats .new {
+  border: 2px solid rgba(25, 165, 135, 0.5);
+  box-shadow: inset 0 0 1rem rgba(25, 165, 135, 0.5);
+}
+
+/*# sourceMappingURL=chatsPage.css.map */
