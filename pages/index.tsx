@@ -64,7 +64,7 @@ const Home: NextPage = () => {
       </main>
       {/* @TODO: change links to next/link */}
       <menu>
-        <a href="home.html" id="active">
+        <a id="active">
           <img
             alt=""
             src="https://img.icons8.com/material-rounded/90/000000/home.png"
