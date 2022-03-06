@@ -1,26 +1,92 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const Login: NextPage = () => {
+  const { push } = useRouter();
   return (
     <div>
-      <form id="login" action="setup.html">
-        <h3>Log in to your SzunyoX account!</h3>
-        <input id="username" type="email" placeholder="Email address" />
-        <input id="password" type="password" placeholder="Password" />
-        <p>or</p>
-        <button className="apple-btn">
-          <img src="../logo/apple.png" alt="" />
-          <span>Sign in with Apple</span>
+      <header>
+        <button title="Back" className="header-btn" onClick={() => push("/")}>
+          <img
+            alt=""
+            src="https://img.icons8.com/ios-filled/90/000000/back.png"
+          />
         </button>
-        <button>
-          <img src="../logo/google.png" alt="" />
-          <span>Sign in with Google</span>
+        Dater
+        <button title="Back" className="header-btn">
+          <img
+            alt=""
+            src="https://img.icons8.com/ios-filled/90/000000/more.png"
+          />
         </button>
-        <button className="main-btn">Start Chatting</button>
-        <a href="#">Forgot password</a>
-        <a href="#">Learn more about us</a>
-      </form>
+      </header>
+      <main>
+        <section className="candidate">
+          <div className="user-info card">
+            <div className="user-header">
+              <h2 id="name">Big Floppa</h2>
+              <h2 id="age">23</h2>
+            </div>
+            <div className="bio">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+              cupiditate maiores at. Voluptatibus cum numquam consequuntur
+              necessitatibus blanditiis! Fugiat, neque!
+            </div>
+            <div className="tags">
+              <a href="" className="tag">
+                Cement
+              </a>
+              <a href="" className="tag">
+                Friday
+              </a>
+              <a href="" className="tag">
+                Funny Ears
+              </a>
+            </div>
+          </div>
+          <div className="chat">
+            <div className="chat-area">
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+              <div className="message user">
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Laborum, quaerat.
+              </div>
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+              <div className="message user">Lorem ipsum dolor sit amet.</div>
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+              <div className="message user">Lorem ipsum dolor sit amet.</div>
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+              <div className="message user">Lorem ipsum dolor sit amet.</div>
+              <div className="message user">Lorem ipsum dolor sit amet.</div>
+              <div className="message">Lorem ipsum dolor sit amet.</div>
+            </div>
+            <div className="message-input">
+              <div className="input-elements">
+                <input placeholder="Say something nice!" type="text" />
+                <a className="send-btn">
+                  <img
+                    alt=""
+                    src="https://img.icons8.com/material-rounded/96/000000/send-letter.png"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="reaction">
+            <button id="dislike">Not my type</button>
+            <button id="save">Save chat</button>
+            <button id="like">Interesting</button>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };

@@ -1,77 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/css/main.css">
-    <link rel="stylesheet" href="../style/css/dater.css">
-    <link rel="stylesheet" href="../style/css/chat.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/css/main.css" />
+    <link rel="stylesheet" href="../style/css/dater.css" />
+    <link rel="stylesheet" href="../style/css/chat.css" />
     <title>Dater</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <button title="Back" class="header-btn" onclick="window.location='home.html'">
-            <img alt="" src="https://img.icons8.com/ios-filled/90/000000/back.png" />
-        </button>
-        Dater
-        <button title="Back" class="header-btn" href="">
-            <img alt="" src="https://img.icons8.com/ios-filled/90/000000/more.png" />
-        </button>
+      <button
+        title="Back"
+        class="header-btn"
+        onclick="window.location='home.html'"
+      >
+        <img
+          alt=""
+          src="https://img.icons8.com/ios-filled/90/000000/back.png"
+        />
+      </button>
+      Dater
+      <button title="Back" class="header-btn" href="">
+        <img
+          alt=""
+          src="https://img.icons8.com/ios-filled/90/000000/more.png"
+        />
+      </button>
     </header>
     <main>
-        <section class="candidate">
-            <div class="user-info card">
-                <div class="user-header">
-                    <h2 id="name">Big Floppa</h2>
-                    <h2 id="age">23</h2>
-                </div>
-                <div class="bio">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod cupiditate maiores at.
-                    Voluptatibus cum numquam consequuntur necessitatibus blanditiis! Fugiat, neque!</div>
-                <div class="tags">
-                    <a href="" class="tag">Cement</a>
-                    <a href="" class="tag">Friday</a>
-                    <a href="" class="tag">Funny Ears</a>
-                </div>
+      <section class="candidate">
+        <div class="user-info card">
+          <div class="user-header">
+            <h2 id="name">Big Floppa</h2>
+            <h2 id="age">23</h2>
+          </div>
+          <div class="bio">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+            cupiditate maiores at. Voluptatibus cum numquam consequuntur
+            necessitatibus blanditiis! Fugiat, neque!
+          </div>
+          <div class="tags">
+            <a href="" class="tag">Cement</a>
+            <a href="" class="tag">Friday</a>
+            <a href="" class="tag">Funny Ears</a>
+          </div>
+        </div>
+        <div class="chat">
+          <div class="chat-area">
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+            <div class="message user">
+              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Laborum, quaerat.
             </div>
-            <div class="chat">
-                <div class="chat-area">
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                    <div class="message user">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit. Laborum, quaerat.</div>
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                    <div class="message user">Lorem ipsum dolor sit amet.</div>
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                    <div class="message user">Lorem ipsum dolor sit amet.</div>
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                    <div class="message user">Lorem ipsum dolor sit amet.</div>
-                    <div class="message user">Lorem ipsum dolor sit amet.</div>
-                    <div class="message">Lorem ipsum dolor sit amet.</div>
-                </div>
-                <div class="message-input">
-                    <div class="input-elements">
-                        <input placeholder="Say something nice!" type="text">
-                        <a class="send-btn"><img alt=""
-                                src="https://img.icons8.com/material-rounded/96/000000/send-letter.png" /></a>
-                    </div>
-                </div>
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+            <div class="message user">Lorem ipsum dolor sit amet.</div>
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+            <div class="message user">Lorem ipsum dolor sit amet.</div>
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+            <div class="message user">Lorem ipsum dolor sit amet.</div>
+            <div class="message user">Lorem ipsum dolor sit amet.</div>
+            <div class="message">Lorem ipsum dolor sit amet.</div>
+          </div>
+          <div class="message-input">
+            <div class="input-elements">
+              <input placeholder="Say something nice!" type="text" />
+              <a class="send-btn"
+                ><img
+                  alt=""
+                  src="https://img.icons8.com/material-rounded/96/000000/send-letter.png"
+              /></a>
             </div>
-            <div class="reaction">
-                <button id="dislike">Not my type</button>
-                <button id="save">Save chat</button>
-                <button id="like">Interesting</button>
-            </div>
-        </section>
+          </div>
+        </div>
+        <div class="reaction">
+          <button id="dislike">Not my type</button>
+          <button id="save">Save chat</button>
+          <button id="like">Interesting</button>
+        </div>
+      </section>
     </main>
-</body>
-
+  </body>
 </html>
