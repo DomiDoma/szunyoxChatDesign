@@ -40,6 +40,9 @@
     box-shadow: inset 0 0.5rem 2rem rgba(255, 255, 255, 0.7);
     animation: moving 20s 5s infinite;
 }
+.noAnim {
+    animation: none !important;
+}
 
 @keyframes moving {
     0% {

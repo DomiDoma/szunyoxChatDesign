@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Login: NextPage = () => {
   const { push } = useRouter();
   return (
-    <div>
+    <>
       <header>
         <button title="Back" className="header-btn" onClick={() => push("/")}>
           <img
@@ -98,36 +99,44 @@ const Login: NextPage = () => {
       </main>
 
       <menu>
-        <a href="home.html">
-          <img
-            alt=""
-            src="https://img.icons8.com/material-rounded/90/000000/home.png"
-          />
-          Home
-        </a>
-        <a href="chats.html" id="active">
-          <img
-            alt=""
-            src="https://img.icons8.com/material/90/000000/chat--v1.png"
-          />
-          Chats
-        </a>
-        <a href="tops.html">
-          <img
-            alt=""
-            src="https://img.icons8.com/material-rounded/90/000000/star--v1.png"
-          />
-          Top picks
-        </a>
-        <a href="account.html">
-          <img
-            alt=""
-            src="https://img.icons8.com/material-rounded/90/000000/guest-male.png"
-          />
-          Account
-        </a>
+        <Link href="/">
+          <a>
+            <img
+              alt=""
+              src="https://img.icons8.com/material-rounded/90/000000/home.png"
+            />
+            Home
+          </a>
+        </Link>
+        <Link href="/chats">
+          <a id="active">
+            <img
+              alt=""
+              src="https://img.icons8.com/material/90/000000/chat--v1.png"
+            />
+            Chats
+          </a>
+        </Link>
+        <Link href="/tops">
+          <a>
+            <img
+              alt=""
+              src="https://img.icons8.com/material-rounded/90/000000/star--v1.png"
+            />
+            Top picks
+          </a>
+        </Link>
+        <Link href="/account">
+          <a>
+            <img
+              alt=""
+              src="https://img.icons8.com/material-rounded/90/000000/guest-male.png"
+            />
+            Account
+          </a>
+        </Link>
       </menu>
-    </div>
+    </>
   );
 };
 

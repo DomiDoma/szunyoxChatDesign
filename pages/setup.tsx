@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const Login: NextPage = () => {
   const { push } = useRouter();
   return (
-    <div>
+    <>
       <header>
         <button
           title="Back"
@@ -40,7 +40,7 @@ const Login: NextPage = () => {
           <p id="email">funny.ears@gmail.com</p>
           <p id="mobile">+36 30 400 4000</p>
         </section>
-        <form className="character">
+        <form action="/" className="character">
           <section className="card">
             <div className="card-header">
               <h4>Hobbies and interests</h4>
@@ -138,13 +138,13 @@ const Login: NextPage = () => {
               </p>
             </div>
           </section>
-          <button className="main-btn">Save</button>
+          <button className="mainBtn">Save</button>
         </form>
       </main>
       <div className="bubble"></div>
       <div className="bubble mid"></div>
       <div className="bubble big"></div>
-    </div>
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 @use "variables/colors";
 
 .bubble {
-    animation: none;
+    animation: none !important;
 }
 html {
     background: colors.$back-color;
@@ -50,7 +50,7 @@ textarea {
     text-transform: uppercase;
 }
 
-.main-btn {
+.mainBtn {
     display: block;
     margin: auto;
     font-size: 1.3rem;
