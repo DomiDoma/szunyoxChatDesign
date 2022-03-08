@@ -1,6 +1,15 @@
-//@TODO: implement nav bar and layout for the whole app
-const Layout = () => {
-  return <></>;
+import Nav from "@components/Nav";
+interface Props {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: Props) => {
+  return (
+    <>
+      {children}
+      <Nav />
+    </>
+  );
 };
 
 export default Layout;

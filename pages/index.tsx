@@ -3,10 +3,12 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import Layout from "@components/Layout";
+
 const Home: NextPage = () => {
   const { push } = useRouter();
   return (
-    <>
+    <Layout>
       <header>
         <span className="header-btn"></span>
         Home
@@ -63,45 +65,7 @@ const Home: NextPage = () => {
           </div>
         </section>
       </main>
-      <menu>
-        <Link href="">
-          <a id="active">
-            <img
-              alt=""
-              src="https://img.icons8.com/material-rounded/90/000000/home.png"
-            />
-            Home
-          </a>
-        </Link>
-        <Link href="/chats">
-          <a>
-            <img
-              alt=""
-              src="https://img.icons8.com/material/90/000000/chat--v1.png"
-            />
-            Chats
-          </a>
-        </Link>
-        <Link href="/tops">
-          <a>
-            <img
-              alt=""
-              src="https://img.icons8.com/material-rounded/90/000000/star--v1.png"
-            />
-            Top picks
-          </a>
-        </Link>
-        <Link href="/account">
-          <a>
-            <img
-              alt=""
-              src="https://img.icons8.com/material-rounded/90/000000/guest-male.png"
-            />
-            Account
-          </a>
-        </Link>
-      </menu>
-    </>
+    </Layout>
   );
 };
 
