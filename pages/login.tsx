@@ -18,12 +18,16 @@ const Login: NextPage = () => {
           <span>Sign in with Google</span>
         </button>
         <button className="mainBtn">Start Chatting</button>
-        <a className="margin" href="#">Forgot password</a>
-        <a className="margin" href="#">Learn more about us</a>
+        <a className="margin" href="#">
+          Forgot password
+        </a>
+        <a className="margin" href="#">
+          Learn more about us
+        </a>
       </form>
       <div className="bubble"></div>
-    <div className="bubble mid"></div>
-    <div className="bubble big"></div>
+      <div className="bubble mid"></div>
+      <div className="bubble big"></div>
     </div>
   );
 };

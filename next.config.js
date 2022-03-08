@@ -5,6 +5,9 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles/scss")],
   },
+  images: {
+    domains: ["img.icons8.com"],
+  },
 };
 
 module.exports = nextConfig;
