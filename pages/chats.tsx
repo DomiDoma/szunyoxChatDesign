@@ -4,7 +4,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import Layout from "@components/Layout";
+import ActiveChatCard from "@components/Cards/ActiveChatCard";
+import SavedChatCard from "@components/Cards/SavedChatCard";
 
+/* @TODO: temp array to simulate .map data rendering from db on custom components */
 const Login: NextPage = () => {
   const { push } = useRouter();
   return (
@@ -28,75 +31,22 @@ const Login: NextPage = () => {
         <h3>Saved-only chats</h3>
         <section className="saved-only">
           <div className="row chat-heads">
-            <div className="profile card">
-              <img
-                src="https://media.karousell.com/media/photos/products/2022/2/8/big_floppa_1644303126_391dfcc8_progressive.jpg"
-                alt=""
-              />
-              <p>Big Floppa</p>
-            </div>
-            <div className="profile card">
-              <img
-                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fzn39ffDhfKI%2Fmaxresdefault.jpg&f=1&nofb=1"
-                alt=""
-              />
-              <p>Big Floppa</p>
-            </div>
-            <div className="profile card">
-              <img
-                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fh9bt1f33lme71.jpg&f=1&nofb=1"
-                alt=""
-              />
-              <p>Big Floppa</p>
-            </div>
-            <div className="profile card">
-              <img
-                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.curiosidades.com.br%2Fwp-content%2Fuploads%2F2021%2F06%2Fmemes-de-gatos-768x512.jpg&f=1&nofb=1"
-                alt=""
-              />
-              <p>Big Floppa</p>
-            </div>
-            <div className="profile card">
-              <img
-                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FPE8Wf5GkzEE%2Fhqdefault.jpg&f=1&nofb=1"
-                alt=""
-              />
-              <p>Big Floppa</p>
-            </div>
+            <SavedChatCard name={"Big Floppa"} />
+            <SavedChatCard name={"Big Floppa"} />
+            <SavedChatCard name={"Big Floppa"} />
+            <SavedChatCard name={"Big Floppa"} />
+            <SavedChatCard name={"Big Floppa"} />
           </div>
         </section>
         <h3>Active chats</h3>
         <section className="active-chats">
-          <div className="new chat card">
-            <img
-              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FPE8Wf5GkzEE%2Fhqdefault.jpg&f=1&nofb=1"
-              alt=""
-            />
-            <div className="column">
-              <h4 id="name">Icus</h4>
-              <p id="last-sent">szunyox nyitva?</p>
-            </div>
-          </div>
-          <div className="chat card">
-            <img
-              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FPE8Wf5GkzEE%2Fhqdefault.jpg&f=1&nofb=1"
-              alt=""
-            />
-            <div className="column">
-              <h4 id="name">Icus</h4>
-              <p id="last-sent">szunyox nyitva?</p>
-            </div>
-          </div>
-          <div className="chat card">
-            <img
-              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FPE8Wf5GkzEE%2Fhqdefault.jpg&f=1&nofb=1"
-              alt=""
-            />
-            <div className="column">
-              <h4 id="name">Icus</h4>
-              <p id="last-sent">szunyox nyitva?</p>
-            </div>
-          </div>
+          <ActiveChatCard
+            name={"Icus"}
+            lastMessage={"Szunyox nyitva?"}
+            newChatMessage
+          />
+          <ActiveChatCard name={"Icus"} lastMessage={"Szunyox nyitva?"} />
+          <ActiveChatCard name={"Icus"} lastMessage={"Szunyox nyitva?"} />
         </section>
       </main>
     </Layout>
