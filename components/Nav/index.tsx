@@ -50,6 +50,20 @@ const Nav = () => {
           Account
         </a>
       </Link>
+
+      
+      {/* dev: */}
+      <Link href="/profileViewer">
+        <a id={pathname === "/profileViewer" ? "active" : ""}>
+          <Image
+            alt=""
+            width={90}
+            height={90}
+            src="https://img.icons8.com/material-rounded/90/000000/help.png"
+          />
+          dev
+        </a>
+      </Link>
     </menu>
   );
 };

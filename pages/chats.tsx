@@ -13,21 +13,22 @@ const Login: NextPage = () => {
   return (
     <Layout>
       <header>
-        <button title="Back" className="header-btn" onClick={() => push("/")}>
+      <span className="header-btn"></span>
+        {/* <button title="Back" className="header-btn" onClick={() => push("/")}>
           <img
             alt=""
             src="https://img.icons8.com/ios-filled/90/000000/back.png"
           />
-        </button>
+        </button> */}
         Chats
-        <button title="Back" className="header-btn">
+        <button title="More" className="header-btn">
           <img
             alt=""
             src="https://img.icons8.com/ios-filled/90/000000/more.png"
           />
         </button>
       </header>
-      <main className="inflow">
+      <main className="bmargin">
         <h3>Saved-only chats</h3>
         <section className="saved-only">
           <div className="row chat-heads">

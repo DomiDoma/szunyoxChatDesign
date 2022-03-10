@@ -26,7 +26,7 @@ const Login: NextPage = () => {
           />
         </button>
       </header>
-      <main className="inflow">
+      <main className="bmargin">
         <section className="user-data card">
           <div className=" card-header row">
             <img
@@ -141,9 +141,6 @@ const Login: NextPage = () => {
           <button className="mainBtn">Save</button>
         </form>
       </main>
-      <div className="bubble"></div>
-      <div className="bubble mid"></div>
-      <div className="bubble big"></div>
     </>
   );
 };

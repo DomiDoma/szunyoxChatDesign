@@ -7,6 +7,7 @@ import "../styles/login.scss";
 import "../styles/menu.scss";
 import "../styles/reactions.scss";
 import "../styles/setup.scss";
+import "../styles/profileViewer.scss";
 import "../styles/elements/bubble.scss";
 import type { AppProps } from "next/app";
 

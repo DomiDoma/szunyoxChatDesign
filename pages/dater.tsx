@@ -14,23 +14,19 @@ import ChatPartnerInfo from "@components/Chat/ChatPartnerInfo";
 const Login: NextPage = () => {
   const { push } = useRouter();
   return (
-    <div>
+    <>
       <header>
         <button title="Back" className="header-btn" onClick={() => push("/")}>
-          <Image
+          <img
             alt=""
             src="https://img.icons8.com/ios-filled/90/000000/back.png"
-            width={90}
-            height={90}
           />
         </button>
-        Dater
-        <button title="Back" className="header-btn">
-          <Image
+        Chats
+        <button title="More" className="header-btn">
+          <img
             alt=""
             src="https://img.icons8.com/ios-filled/90/000000/more.png"
-            width={90}
-            height={90}
           />
         </button>
       </header>
@@ -65,7 +61,7 @@ const Login: NextPage = () => {
           </div>
         </section>
       </main>
-    </div>
+    </>
   );
 };
 

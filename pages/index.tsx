@@ -19,7 +19,7 @@ const Home: NextPage = () => {
           />
         </button>
       </header>
-      <main className="inflow">
+      <main className="bmargin">
         <section className="greeting">
           <h1>Good afternoon, Icus!</h1>
         </section>

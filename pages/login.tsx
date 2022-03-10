@@ -45,7 +45,7 @@ const Login: NextPage = () => {
           <img src="../logo/google.png" alt="" />
           <span>Sign in with Google</span>
         </button>
-        <button className="mainBtn" type="button" onClick={handleSubmit}>
+        <button className="mainBtn bMargin" type="button" onClick={handleSubmit}>
           Start Chatting
         </button>
         <a className="margin" href="#">
