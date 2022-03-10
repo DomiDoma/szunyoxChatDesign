@@ -1,10 +1,5 @@
 @use "variables/colors";
 
-html {
-    background: colors.$back-color;
-    background: linear-gradient(120deg, rgba(38, 113, 186, 1) 0%, rgba(25, 165, 135, 1) 100%);
-}
-
 #login {
     display: flex;
     flex-direction: column;
@@ -17,22 +12,24 @@ html {
     margin: auto;
     padding: 1rem;
     //border: 2px solid rgba(255, 255, 255, 0.2);
-
     -webkit-backdrop-filter: blur(1rem);
     backdrop-filter: blur(1rem);
+    z-index: 1;
 }
 
 a {
     font-size: small;
 }
-.margin {
+a.margin {
     margin: 0.2rem;
 }
 
 .mainBtn {
-    margin: 2rem 0 1rem 0;
     font-size: larger;
     font-weight: bold;
+}
+.bMargin {
+    margin: 2rem 0 1rem 0 !important;
 }
 .appleBtn {
     background-color: black;

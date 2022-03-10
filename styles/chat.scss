@@ -49,9 +49,16 @@
             transform: translateY(-50%);
             height: 2rem;
             width: 2rem;
+            z-index: 10;
             img {
                 height: 2rem;
                 filter: invert(1);
+            }
+        }
+        input:not(:placeholder-shown) ~ .send-btn,
+        input:focus ~ .send-btn {
+            img {
+                filter: none;
             }
         }
     }

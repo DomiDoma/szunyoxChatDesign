@@ -1,0 +1,50 @@
+.profileHeader {
+    position: fixed;
+    top: 3rem;
+    width: 100%;
+    max-width: 30rem;
+    max-height: 30rem;
+    background-color: black;
+    img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        transition: all 0.2s ease;
+    }
+    img.small {
+        width: 3rem;
+    }
+    h2 {
+        text-shadow: 0 0 1rem black;
+    }
+    .row {
+        width: 100%;
+        padding: 1rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    #age {
+        margin-left: 0.5rem;
+        opacity: 0.5;
+    }
+}
+.profileData {
+    .tags {
+        padding: 0;
+        margin: 0.5rem;
+    }
+    .bio {
+        margin: 1rem;
+    }
+    .tag {
+        img {
+            margin-right: 0.5rem;
+            height: 1rem;
+        }
+    }
+    .social {
+        margin-bottom: 50rem;
+    }
+}

@@ -1,10 +1,5 @@
 @use "variables/colors";
 
-html {
-    background: colors.$back-color;
-    background: linear-gradient(120deg, rgb(18, 52, 87) 0%, rgb(13, 83, 68) 100%);
-}
-
 .greeting {
     h1 {
         text-align: center;

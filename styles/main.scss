@@ -10,7 +10,8 @@
 
 html {
     min-height: 100vh;
-    background-color: rgb(15, 15, 15);
+    background: rgb(15, 15, 15);
+    //background: colors.$linear-gradient fixed;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -36,8 +37,16 @@ div.fixed {
 main {
     overflow: hidden;
 }
-main.inflow {
+main.bmargin {
     margin-top: 4rem !important;
+    margin-bottom: 7rem !important;
+}
+main.margin {
+    margin-top: 3rem !important;
+    margin-bottom: 7rem !important;
+}
+main.xlmargin {
+    margin-top: 28rem !important;
     margin-bottom: 7rem !important;
 }
 
@@ -96,14 +105,14 @@ p {
     -webkit-backdrop-filter: blur(1rem);
     backdrop-filter: blur(1rem);
     .card-header {
-        background-color: colors.$back-color-tr-02;
+        background-color: colors.$back-color-tr;
         width: 100%;
         text-align: center;
         font-size: 1rem;
         padding: 0.5em;
     }
     .card-footer {
-        background-color: colors.$back-color-tr-02;
+        background-color: colors.$back-color-tr;
         width: 100%;
         text-transform: uppercase;
         font-size: 0.7rem;

@@ -1,13 +1,5 @@
 @use "variables/colors";
 
-.bubble {
-    animation: none !important;
-}
-html {
-    background: colors.$back-color;
-    background: linear-gradient(120deg, rgba(38, 113, 186, 1) 0%, rgba(25, 165, 135, 1) 100%);
-}
-
 .user-data {
     img {
         border-radius: 50%;
@@ -34,7 +26,7 @@ textarea {
     margin: 1rem;
 }
 .file-input {
-    background-color: colors.$back-color-tr-02;
+    background-color: colors.$back-color-tr;
     font-weight: bold;
     font-size: 1rem;
     padding: 2rem;

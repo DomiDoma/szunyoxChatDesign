@@ -1,4 +1,4 @@
-$base-color: rgb(25, 165, 135);
+$base-color: #19a587;
 $back-color: rgb(37, 37, 37);
 $front-color: rgb(224, 224, 224);
 
@@ -7,3 +7,7 @@ $back-color-tr: rgba(37, 37, 37, 0.5);
 $back-color-tr-02: rgba(37, 37, 37, 0.2);
 $front-color-tr: rgba(224, 224, 224, 0.5);
 $front-color-tr-02: rgba(224, 224, 224, 0.2);
+
+$radial-gradient: radial-gradient(circle, rgba(25, 165, 128, 1) 0%, rgba(16, 64, 102, 1) 30%, rgba(0, 0, 0, 1) 70%);
+
+$linear-gradient: linear-gradient(150deg, rgba(0, 0, 0, 1) 72%, rgba(25, 64, 107, 1) 84%, rgba(25, 165, 135, 1) 100%);

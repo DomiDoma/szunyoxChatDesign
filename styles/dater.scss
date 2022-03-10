@@ -25,25 +25,6 @@ main {
                 max-height: 10rem;
                 overflow-y: auto;
             }
-
-            .tags {
-                display: flex;
-                justify-content: left;
-                padding: 0.5rem 0 0 0;
-
-                .tag {
-                    text-decoration: none;
-                    color: white;
-                    background-color: rgba(0, 0, 0, 0.5);
-                    border-radius: 10rem;
-                    padding: 0.5rem;
-                    border: 2px solid rgba(255, 255, 255, 0.2);
-                    font-size: 0.8rem;
-                    text-transform: uppercase;
-                    font-weight: bold;
-                    margin-right: 0.2em;
-                }
-            }
         }
 
         .chat {
@@ -93,5 +74,25 @@ main {
                 background-color: rgba(0, 0, 0, 0.9);
             }
         }
+    }
+}
+.tags {
+    display: flex;
+    justify-content: left;
+    padding: 0.5rem 0 0 0;
+
+    .tag {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10rem;
+        padding: 0.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-right: 0.2em;
     }
 }
