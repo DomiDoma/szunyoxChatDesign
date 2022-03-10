@@ -2,6 +2,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
+import Message from "@components/Chat/Message";
+/* temp data until we have db */
+import { msgData, UserData } from "lib/temp/messageData";
+import ChatPartnerInfo from "@components/Chat/ChatPartnerInfo";
+
 const Login: NextPage = () => {
   const { push } = useRouter();
   return (
@@ -23,50 +28,12 @@ const Login: NextPage = () => {
       </header>
       <main>
         <section className="candidate">
-          <div className="user-info card">
-            <div className="user-header">
-              <h2 id="name">Big Floppa</h2>
-              <h2 id="age">23</h2>
-            </div>
-            <div className="bio">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
-              cupiditate maiores at. Voluptatibus cum numquam consequuntur
-              necessitatibus blanditiis! Fugiat, neque!
-            </div>
-            <div className="tags">
-              <a href="" className="tag">
-                Cement
-              </a>
-              <a href="" className="tag">
-                Friday
-              </a>
-              <a href="" className="tag">
-                Funny Ears
-              </a>
-            </div>
-          </div>
+          <ChatPartnerInfo {...UserData} />
           <div className="chat">
             <div className="chat-area">
-              <div className="message">Lorem ipsum dolor sit amet.</div>
-              <div className="message user">
-                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Laborum, quaerat.
-              </div>
-              <div className="message">Lorem ipsum dolor sit amet.</div>
-              <div className="message">Lorem ipsum dolor sit amet.</div>
-              <div className="message">Lorem ipsum dolor sit amet.</div>
-              <div className="message user">Lorem ipsum dolor sit amet.</div>
-              <div className="message">Lorem ipsum dolor sit amet.</div>
-              <div className="message">Lorem ipsum dolor sit amet.</div>
-              <div className="message">Lorem ipsum dolor sit amet.</div>
-              <div className="message">Lorem ipsum dolor sit amet.</div>
-              <div className="message user">Lorem ipsum dolor sit amet.</div>
-              <div className="message">Lorem ipsum dolor sit amet.</div>
-              <div className="message">Lorem ipsum dolor sit amet.</div>
-              <div className="message">Lorem ipsum dolor sit amet.</div>
-              <div className="message user">Lorem ipsum dolor sit amet.</div>
-              <div className="message user">Lorem ipsum dolor sit amet.</div>
-              <div className="message">Lorem ipsum dolor sit amet.</div>
+              {msgData.map((x) => (
+                <Message {...x} key={x.id} />
+              ))}
             </div>
             <div className="message-input">
               <div className="input-elements">
