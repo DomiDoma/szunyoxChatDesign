@@ -17,8 +17,9 @@ const ChatPartnerInfo = ({ name, age, bio, tags }: Props) => {
       </div>
       <div className="bio">{bio}</div>
       <div className="tags">
-        {tags.map((tag) => (
-          <Tag content={tag} />
+        {/* temp key due to fake data */}
+        {tags.map((tag, idx) => (
+          <Tag content={tag} key={idx} />
         ))}
       </div>
     </div>
