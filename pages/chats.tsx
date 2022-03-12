@@ -47,7 +47,7 @@ const Login: NextPage = () => {
             newChatMessage
           />
           <ActiveChatCard name={"Icus"} lastMessage={"Szunyox nyitva?"} />
-          <ActiveChatCard name={"Icus"} lastMessage={"Szunyox nyitva?"} />
+          <ActiveChatCard name={"BIG FLOPPA"} lastMessage={"Szunyox nyitva?"} />
         </section>
       </main>
     </Layout>
