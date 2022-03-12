@@ -13,14 +13,20 @@ const ProfileViewer: NextPage = () => {
   const scrollPosition = useScrollPosition();
   const pfpRef = useRef<HTMLDivElement>(null);
 
-  //@FIXME: width change based on scroll position
+  //@TODO: play around with values and fix css
   useEffect(() => {
     if (scrollPosition === 0) {
       //@ts-ignore
       pfpRef.current?.style.width = `$100%`;
+    } else if (scrollPosition >= 380) {
+      //@ts-ignore
+      pfpRef.current?.style.width = `45%`;
+    } else {
+      const amount = Math.pow(0.9, scrollPosition / 50) * 100;
+      console.log(amount);
+      //@ts-ignore
+      pfpRef.current?.style.width = `${amount}%`;
     }
-    //@ts-ignore
-    pfpRef.current?.style.width = `${100 - scrollPosition}%`;
   }, [scrollPosition]);
   return (
     <Layout>
