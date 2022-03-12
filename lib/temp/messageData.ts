@@ -51,4 +51,7 @@ const UserData = {
   bio: "Niggers",
   tags: ["tag1", "tag2", "tag3"],
 };
-export { msgData, UserData };
+
+const savedChatCardData = new Array(20).fill(UserData);
+
+export { msgData, UserData, savedChatCardData };

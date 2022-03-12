@@ -7,13 +7,16 @@ import Layout from "@components/Layout";
 import ActiveChatCard from "@components/Cards/ActiveChatCard";
 import SavedChatCard from "@components/Cards/SavedChatCard";
 
+//temp
+import { savedChatCardData } from "@lib/temp/messageData";
+
 /* @TODO: temp array to simulate .map data rendering from db on custom components */
 const Login: NextPage = () => {
-  const { push } = useRouter();
+  //const { push } = useRouter();
   return (
     <Layout>
       <header>
-      <span className="header-btn"></span>
+        <span className="header-btn"></span>
         {/* <button title="Back" className="header-btn" onClick={() => push("/")}>
           <img
             alt=""
@@ -32,11 +35,10 @@ const Login: NextPage = () => {
         <h3>Saved-only chats</h3>
         <section className="saved-only">
           <div className="row chat-heads">
-            <SavedChatCard name={"Big Floppa"} />
-            <SavedChatCard name={"Big Floppa"} />
-            <SavedChatCard name={"Big Floppa"} />
-            <SavedChatCard name={"Big Floppa"} />
-            <SavedChatCard name={"Big Floppa"} />
+            {/* @FIXME: idx as key -> as soon as we have working backend */}
+            {savedChatCardData.map((x, idx) => (
+              <SavedChatCard {...x} key={idx} />
+            ))}
           </div>
         </section>
         <h3>Active chats</h3>
