@@ -42,7 +42,11 @@ const Home: NextPage = () => {
             <text>tap here to open Dater</text>
           </div>
         </section>
-        <section tabIndex={2} className="tip card">
+        <section
+          tabIndex={2}
+          className="tip card"
+          onClick={() => push("/account")}
+        >
           <div className="card-header">Finish up your account!</div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero

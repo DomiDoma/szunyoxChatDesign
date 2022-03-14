@@ -11,7 +11,7 @@ import SavedChatCard from "@components/Cards/SavedChatCard";
 import { savedChatCardData } from "@lib/temp/messageData";
 
 /* @TODO: temp array to simulate .map data rendering from db on custom components */
-const Login: NextPage = () => {
+const Chats: NextPage = () => {
   //const { push } = useRouter();
   return (
     <Layout>
@@ -56,4 +56,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default Chats;

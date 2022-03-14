@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 //@TODO: head fix, design / page layout fix
-const Login: NextPage = () => {
+const Account: NextPage = () => {
   const { push } = useRouter();
   return (
     <>
@@ -145,4 +145,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default Account;

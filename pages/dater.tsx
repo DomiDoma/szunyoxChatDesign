@@ -19,7 +19,7 @@ import ChatPartnerInfo from "@components/Chat/ChatPartnerInfo";
 //@FIXME: fix design on ChatPartnerInfo, not full width on short bio
 //@TODO: basic page interactions funcitonality,implement next/head for SEO
 //@TODO: lib/types & import interfaces and types
-const Login: NextPage = () => {
+const Dater: NextPage = () => {
   const { push } = useRouter();
   const textInputRef = useRef<HTMLInputElement>(null);
   const [messages, setMessages] = useState<iMsgData[]>(msgData as iMsgData[]);
@@ -94,4 +94,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default Dater;
