@@ -8,11 +8,7 @@ const Account: NextPage = () => {
   return (
     <>
       <header>
-        <button
-          title="Back"
-          className="header-btn"
-          onClick={() => push("/login")}
-        >
+        <button title="Back" className="header-btn" onClick={() => push("/")}>
           <img
             alt=""
             src="https://img.icons8.com/ios-filled/90/000000/back.png"
