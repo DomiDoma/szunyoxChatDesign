@@ -3,6 +3,8 @@ import Head from "next/head";
 
 import { useRef } from "react";
 
+import { API_URL } from "@lib/constants";
+
 const Login: NextPage = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
@@ -12,8 +14,18 @@ const Login: NextPage = () => {
     const password = passwordRef.current?.value;
 
     /* login fetch */
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    };
+    const resp = await (await fetch(`${API_URL}/login`, options)).json();
 
-    /* handle unsuccessful login */
+    if (!resp.ok) {
+      return;
+    } /* handle unsuccessful login */
 
     /* redirect on successful login */
     const { push } = (await import("next/router")).default;
@@ -45,7 +57,11 @@ const Login: NextPage = () => {
           <img src="../logo/google.png" alt="" />
           <span>Sign in with Google</span>
         </button>
-        <button className="mainBtn bMargin" type="button" onClick={handleSubmit}>
+        <button
+          className="mainBtn bMargin"
+          type="button"
+          onClick={handleSubmit}
+        >
           Start Chatting
         </button>
         <a className="margin" href="#">
