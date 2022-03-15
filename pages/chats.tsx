@@ -3,6 +3,9 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { useEffect } from "react";
+
+//components
 import Layout from "@components/Layout";
 import ActiveChatCard from "@components/Cards/ActiveChatCard";
 import SavedChatCard from "@components/Cards/SavedChatCard";
@@ -10,9 +13,20 @@ import SavedChatCard from "@components/Cards/SavedChatCard";
 //temp
 import { savedChatCardData } from "@lib/temp/messageData";
 
+//lib files
+import useUser from "@lib/hooks/useUser";
+
 /* @TODO: temp array to simulate .map data rendering from db on custom components */
 const Chats: NextPage = () => {
   //const { push } = useRouter();
+
+  const user = useUser();
+  useEffect(() => {
+    const fetchFriends = async () => {
+      /* fetch api for friends based on user's id or similar */
+    };
+    fetchFriends();
+  }, []);
   return (
     <Layout>
       <header>
