@@ -1,16 +1,24 @@
+@use "variables/colors";
 .profileHeader {
     position: fixed;
     top: 3rem;
-    /* width: 100%; */
-    max-width: 30rem;
-    max-height: 30rem;
-    background-color: black;
+    width: 100%;
+    min-height: 6rem;
+    max-height: 24rem;
+    background-color: colors.$back-color-tr;
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     img {
-        width: 100%;
+        min-width: 4rem;
+        min-height: 4rem;
         height: 100%;
         aspect-ratio: 1/1;
         object-fit: cover;
-        transition: all 0.2s ease;
+        //transition: all 0.2s ease;
     }
     img.small {
         width: 3rem;

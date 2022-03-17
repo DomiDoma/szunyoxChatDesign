@@ -12,24 +12,33 @@ const ProfileViewer: NextPage = () => {
   const { push } = useRouter();
   const scrollPosition = useScrollPosition();
   const pfpRef = useRef<HTMLDivElement>(null);
+  const header = useRef<HTMLDivElement>(null);
+  const title = useRef<HTMLDivElement>(null);
+  const snapper = useRef<HTMLDivElement>(null);
 
-  //@TODO: play around with values and fix css
+  //@TODO: tidy up, check performance, full of red idk why but working
   useEffect(() => {
-    if (scrollPosition === 0) {
-      //@ts-ignore
-      pfpRef.current?.style.width = `$100%`;
-    } else if (scrollPosition >= 380) {
-      //@ts-ignore
-      pfpRef.current?.style.width = `45%`;
-    } else {
-      const amount = Math.pow(0.9, scrollPosition / 50) * 100;
-      console.log(amount);
-      //@ts-ignore
-      pfpRef.current?.style.width = `${amount}%`;
+    const amount = Math.pow(.6, scrollPosition / 50) * 100;
+    const bRadius = scrollPosition*0.2;
+    const padd = scrollPosition<150 ? scrollPosition*0.1 : 10;
+    console.log(amount);
+    //@ts-ignore
+    title.current?.style.opacity=`${1-(scrollPosition/200)}`;
+    header.current?.style.height = `${amount > 98 ? 'unset' : amount+'%'}`;
+    header.current?.style.padding = `${padd}px`;
+    pfpRef.current?.style.borderRadius = `${bRadius}%`;
+    if(amount>25){
+      snapper.current?.style.scrollMargin="33rem";
+      snapper.current?.style.scrollSnapAlign="none";
+    }
+    else{
+      snapper.current?.style.scrollSnapAlign="start";
+      snapper.current?.style.scrollMargin="10rem";
     }
   }, [scrollPosition]);
   return (
     <Layout>
+      <div ref={snapper} className="snapper">
       <header>
         <button title="Back" className="header-btn" onClick={() => push("/")}>
           <img
@@ -45,13 +54,13 @@ const ProfileViewer: NextPage = () => {
           />
         </button>
       </header>
-      <section ref={pfpRef} className="profileHeader">
-        <img
+      <section ref={header}  className="profileHeader">
+        <img ref={pfpRef}
           id="profile-img"
           src="https://media.karousell.com/media/photos/products/2022/2/8/big_floppa_1644303126_391dfcc8_progressive.jpg"
           alt=""
         />
-        <div className="row">
+        <div ref={title} className="row">
           <h2 id="name">Big Floppa</h2>
           <h2 id="age">23</h2>
         </div>
@@ -102,6 +111,7 @@ const ProfileViewer: NextPage = () => {
           </div>
         </section>
       </main>
+      </div>
     </Layout>
   );
 };
