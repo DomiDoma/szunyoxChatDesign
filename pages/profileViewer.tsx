@@ -37,7 +37,7 @@ const ProfileViewer: NextPage = () => {
 
     if (isRefsNotNull) {
       titleC.style.opacity = `${1 - scrollPosition / 200}`;
-      headerC.style.height = `${amount > 98 ? "unset" : amount + "%"}`;
+      headerC.style.height = amount > 98 ? "unset" : `${amount}%`;
       headerC.style.padding = `${padd}px`;
       pfpC.style.borderRadius = `${bRadius}%`;
     }
