@@ -11,6 +11,7 @@ import Layout from "@components/Layout";
 const ProfileViewer: NextPage = () => {
   const { push } = useRouter();
   const scrollPosition = useScrollPosition();
+
   const pfpRef = useRef<HTMLImageElement>(null);
   const header = useRef<HTMLDivElement>(null);
   const title = useRef<HTMLDivElement>(null);
@@ -18,28 +19,37 @@ const ProfileViewer: NextPage = () => {
 
   //@TODO: tidy up, check performance
   useEffect(() => {
-    const amount = Math.pow(0.6, scrollPosition / 50) * 100;
-    const bRadius = scrollPosition * 0.2;
-    const padd = scrollPosition < 150 ? scrollPosition * 0.1 : 10;
-
     const titleC = title.current;
     const headerC = header.current;
     const pfpC = pfpRef.current;
 
-    if (titleC && headerC && pfpC) {
+    const isRefsNotNull = titleC && headerC && pfpC;
+
+    if (isRefsNotNull && scrollPosition === 0) {
+      pfpC.removeAttribute("style");
+      headerC.removeAttribute("style");
+      titleC.removeAttribute("style");
+    }
+
+    const amount = Math.pow(0.6, scrollPosition / 50) * 100;
+    const bRadius = scrollPosition * 0.2;
+    const padd = scrollPosition < 150 ? scrollPosition * 0.1 : 10;
+
+    if (isRefsNotNull) {
       titleC.style.opacity = `${1 - scrollPosition / 200}`;
       headerC.style.height = `${amount > 98 ? "unset" : amount + "%"}`;
       headerC.style.padding = `${padd}px`;
       pfpC.style.borderRadius = `${bRadius}%`;
     }
+
     const snapperC = snapper.current;
     if (snapperC) {
       if (amount > 25) {
         snapperC.style.scrollMargin = "33rem";
         snapperC.style.scrollSnapAlign = "none";
       } else {
-        snapperC.style.scrollSnapAlign = "start";
         snapperC.style.scrollMargin = "10rem";
+        snapperC.style.scrollSnapAlign = "start";
       }
     }
   }, [scrollPosition]);
