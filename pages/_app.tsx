@@ -10,9 +10,14 @@ import "../styles/setup.scss";
 import "../styles/profileViewer.scss";
 import "../styles/elements/bubble.scss";
 import type { AppProps } from "next/app";
+import { socket, SocketContext } from "@lib/context";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <SocketContext.Provider value={socket}>
+      <Component {...pageProps} />;
+    </SocketContext.Provider>
+  );
 }
 
 export default MyApp;

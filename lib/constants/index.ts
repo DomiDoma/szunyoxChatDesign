@@ -1,4 +1,5 @@
-export const API_URL = "api.snaptalk.cf";
+export const API_URL = "http://localhost:9898";
+export const SOCKET_URL = "http://localhost:9898"
 export const EVENTS = {
   connection: "connection",
   CLIENT: {
