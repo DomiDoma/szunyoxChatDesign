@@ -10,7 +10,7 @@ import Message from "@components/Chat/Message";
 
 /* temp data until we have db */
 import { msgData, UserData } from "lib/temp/messageData";
-import { EVENTS } from "@lib/constants";
+import { EVENTS, SOCKET_URL } from "@lib/constants";
 
 import { io } from "socket.io-client";
 
@@ -20,8 +20,7 @@ interface iMsgData {
   id: number;
 }
 
-
-const socket = io("http://localhost:9898");
+const socket = io(SOCKET_URL);
 
 //@FIXME: fix design on ChatPartnerInfo, not full width on short bio
 //@TODO: basic page interactions funcitonality,implement next/head for SEO
