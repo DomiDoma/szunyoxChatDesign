@@ -17,7 +17,7 @@ const ProfileViewer: NextPage = () => {
   const title = useRef<HTMLDivElement>(null);
   const snapper = useRef<HTMLDivElement>(null);
 
-  //@TODO: tidy up, check performance
+  //@TODO: tidy up, check performance, fix scrollSnap to top
   useEffect(() => {
     const titleC = title.current;
     const headerC = header.current;
@@ -43,34 +43,20 @@ const ProfileViewer: NextPage = () => {
     }
 
     const snapperC = snapper.current;
-    if (snapperC) {
-      if (amount > 25) {
+    if (snapperC && headerC) {
+      if (amount > 65) {
+      } else if (amount > 25 && amount < 65) {
         snapperC.style.scrollMargin = "33rem";
         snapperC.style.scrollSnapAlign = "none";
-      } else {
+      } else if (amount < 25) {
         snapperC.style.scrollMargin = "10rem";
         snapperC.style.scrollSnapAlign = "start";
       }
     }
   }, [scrollPosition]);
   return (
-    <Layout>
+    <Layout header name={"Big Floppa"}>
       <div ref={snapper} className="snapper">
-        <header>
-          <button title="Back" className="header-btn" onClick={() => push("/")}>
-            <img
-              alt=""
-              src="https://img.icons8.com/ios-filled/90/000000/back.png"
-            />
-          </button>
-          Big Floppa
-          <button title="Back" className="header-btn">
-            <img
-              alt=""
-              src="https://img.icons8.com/ios-filled/90/000000/more.png"
-            />
-          </button>
-        </header>
         <section ref={header} className="profileHeader">
           <img
             ref={pfpRef}
