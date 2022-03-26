@@ -15,7 +15,7 @@ import { socket, SocketContext } from "@lib/context";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SocketContext.Provider value={socket}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </SocketContext.Provider>
   );
 }
