@@ -6,4 +6,6 @@ const isValidEmail = (email: string) => {
     );
 };
 
-export { isValidEmail };
+const isPasswordEqual = (pw: string, pw2: string) => pw === pw2;
+
+export { isValidEmail, isPasswordEqual };
