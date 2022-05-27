@@ -3,16 +3,25 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-import { useState, useRef, useEffect, useContext } from "react";
+import {
+  useState,
+  useRef,
+  useEffect,
+  useContext,
+  useMemo,
+  useCallback,
+} from "react";
 
 import ChatPartnerInfo from "@components/Chat/ChatPartnerInfo";
 import Message from "@components/Chat/Message";
 
 /* temp data until we have db */
 import { msgData, UserData } from "lib/temp/messageData";
-import { EVENTS } from "@lib/constants";
+import { EVENTS, SOCKET_URL } from "@lib/constants";
+import { isBrowser } from "@lib/context";
 
-import { SocketContext } from "@lib/context";
+//import { SocketContext } from "@lib/context";
+//import { socket } from "@lib/context";
 
 interface iMsgData {
   content: string;
@@ -28,19 +37,28 @@ const Dater: NextPage = () => {
   const textInputRef = useRef<HTMLInputElement>(null);
   const [messages, setMessages] = useState<iMsgData[]>(msgData as iMsgData[]);
   const [roomId, setRoomId] = useState<string>(asPath.split("/")[2]);
-  const socket = useContext(SocketContext);
 
-  useEffect(() => {
-    joinRoom();
-  }, []);
+  const socket = useMemo(
+    () => (isBrowser ? new WebSocket(SOCKET_URL) : null),
+    []
+  );
 
-  socket.on(EVENTS.SERVER.ROOM_MESSAGE, ({ id, content }) => {
+  /* socket.on(EVENTS.SERVER.ROOM_MESSAGE, ({ id, content }) => {
     const newMessage = { content, id, isSentByUser: false };
     setMessages([newMessage, ...messages]);
   });
 
   socket.on(EVENTS.SERVER.JOINED_ROOM, (value) => {
     setRoomId(value);
+  }); */
+
+  socket?.addEventListener("message", ({ data }) => {
+    const newMessage: iMsgData = JSON.parse(data);
+    console.log(messages[0].id)
+    console.log(messages[0].id == newMessage.id)
+    if (messages[0].id == newMessage.id) {
+      //setMessages([newMessage, ...messages]);
+    }
   });
 
   const handleMessageSend = () => {
@@ -48,11 +66,13 @@ const Dater: NextPage = () => {
     const newMessage = {
       content: textInputRef.current?.value!,
       isSentByUser: true,
-      id: Math.random() * 1235123 - 123,
+      id: Math.random() * 200 - 200,
       roomId: roomId,
     };
-    socket.emit(EVENTS.CLIENT.SEND_ROOM_MESSAGE, newMessage);
+
+    socket?.send(JSON.stringify(newMessage));
     setMessages([newMessage, ...messages]);
+
     if (textInputRef.current) textInputRef.current.value = "";
   };
   const handleEnter = ({ charCode }: { charCode: number }) => {
@@ -61,7 +81,7 @@ const Dater: NextPage = () => {
   const joinRoom = () => {
     //place holder until we figure out how to handle room names
     const roomName = "room1";
-    socket.emit(EVENTS.CLIENT.JOIN_ROOM, { roomName });
+    //socket.emit(EVENTS.CLIENT.JOIN_ROOM, { roomName });
   };
   return (
     <>

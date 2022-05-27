@@ -1,5 +1,5 @@
 export const API_URL = "http://localhost:9898";
-export const SOCKET_URL = "http://localhost:9898"
+export const SOCKET_URL = "ws://localhost:3001/ws"
 export const EVENTS = {
   connection: "connection",
   CLIENT: {

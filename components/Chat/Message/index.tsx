@@ -4,7 +4,7 @@ interface Props {
 }
 
 const Message = ({ content, isSentByUser }: Props) => {
-  return <div className={`message ${isSentByUser ? "user" : ''}`}>{content}</div>;
+  return <div className={`message ${isSentByUser ? "user" : ""}`}>{content}</div>;
 };
 
 export default Message;
