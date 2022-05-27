@@ -14,7 +14,7 @@
             margin: 0rem 1rem 0.8rem 1rem;
             padding: 0.5rem 1rem 0.5rem 1rem;
 
-            width: 70%;
+            min-width: min-content;
         }
         .message.user {
             margin: 0rem 1rem 0.8rem auto;
