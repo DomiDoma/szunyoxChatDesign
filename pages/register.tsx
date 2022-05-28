@@ -15,6 +15,7 @@ const Login: NextPage = () => {
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
     const password2 = passwordCheckRef.current?.value;
+    const name = email;
 
     /* return error @TODO: design for Error, separate error to make it obvious why register failed */
     if (!isPasswordEqual(password!, password2!) || !isValidEmail(email!))
@@ -26,9 +27,10 @@ const Login: NextPage = () => {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, name }),
     };
-    const resp = await (await fetch(`${API_URL}/register`, options)).json();
+    //const resp = await (await fetch(`${API_URL}/register`, options)).json();
+    const resp = await fetch(`${API_URL}/register`, options);
 
     /* handle unsuccessful login */
     if (!resp.ok) {
@@ -37,7 +39,7 @@ const Login: NextPage = () => {
 
     /* redirect on successful login */
     const { push } = (await import("next/router")).default;
-    push("/setup");
+    push("/chats");
   };
 
   return (

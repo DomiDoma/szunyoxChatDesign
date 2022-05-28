@@ -1,4 +1,4 @@
-export const API_URL = "http://localhost:9898";
+export const API_URL = "http://localhost:3001";
 export const SOCKET_URL = "ws://localhost:3001/ws"
 export const EVENTS = {
   connection: "connection",

@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -10,9 +9,6 @@ import Message from "@components/Chat/Message";
 
 /* temp data until we have db */
 import { msgData, UserData } from "lib/temp/messageData";
-import { EVENTS } from "@lib/constants";
-
-import { io } from "socket.io-client";
 
 interface iMsgData {
   content: string;
@@ -20,12 +16,7 @@ interface iMsgData {
   id: number;
 }
 
-
-const socket = io("http://localhost:9898");
-
-//@FIXME: fix design on ChatPartnerInfo, not full width on short bio
-//@TODO: basic page interactions funcitonality,implement next/head for SEO
-//@TODO: lib/types & import interfaces and types
+//@FIXME: moved to chat/[id]
 const Dater: NextPage = () => {
   const { push, asPath } = useRouter();
   const textInputRef = useRef<HTMLInputElement>(null);
@@ -36,15 +27,6 @@ const Dater: NextPage = () => {
     joinRoom();
   }, []);
 
-  socket.on(EVENTS.SERVER.ROOM_MESSAGE, ({ id, content }) => {
-    const newMessage = { content, id, isSentByUser: false };
-    setMessages([newMessage, ...messages]);
-  });
-
-  socket.on(EVENTS.SERVER.JOINED_ROOM, (value) => {
-    setRoomId(value);
-  });
-
   const handleMessageSend = () => {
     if (textInputRef.current?.value === "") return;
     const newMessage = {
@@ -53,7 +35,6 @@ const Dater: NextPage = () => {
       id: Math.random() * 1235123 - 123,
       roomId: roomId,
     };
-    socket.emit(EVENTS.CLIENT.SEND_ROOM_MESSAGE, newMessage);
     setMessages([newMessage, ...messages]);
     if (textInputRef.current) textInputRef.current.value = "";
   };
@@ -63,7 +44,6 @@ const Dater: NextPage = () => {
   const joinRoom = () => {
     //place holder until we figure out how to handle room names
     const roomName = "room1";
-    socket.emit(EVENTS.CLIENT.JOIN_ROOM, { roomName });
   };
   return (
     <>
