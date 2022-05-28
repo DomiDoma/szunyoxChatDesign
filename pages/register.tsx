@@ -5,11 +5,16 @@ import { useRef } from "react";
 
 import { API_URL } from "@lib/constants";
 import { isPasswordEqual, isValidEmail } from "@lib/utils";
+import Link from "next/link";
 
 const Login: NextPage = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const passwordCheckRef = useRef<HTMLInputElement>(null);
+
+  const handleOauth = async (provider: string) => {
+    window.open(`${API_URL}/auth/${provider}`, "_blank");
+  };
 
   const handleSubmit = async () => {
     const email = emailRef.current?.value;
@@ -60,11 +65,11 @@ const Login: NextPage = () => {
           ref={passwordCheckRef}
         />
         <p>or</p>
-        <button className="appleBtn">
+        <button className="appleBtn" onClick={() => handleOauth("apple")}>
           <img src="../logo/apple.png" alt="" />
           <span>Sign in with Apple</span>
         </button>
-        <button>
+        <button onClick={() => handleOauth("google")}>
           <img src="../logo/google.png" alt="" />
           <span>Sign in with Google</span>
         </button>
