@@ -1,11 +1,10 @@
 import type { NextPage } from "next";
-import Head from "next/head";
+//import Head from "next/head";
 
 import { useRef } from "react";
 
 import { API_URL } from "@lib/constants";
 import { isPasswordEqual, isValidEmail } from "@lib/utils";
-import Link from "next/link";
 
 const Login: NextPage = () => {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -13,7 +12,7 @@ const Login: NextPage = () => {
   const passwordCheckRef = useRef<HTMLInputElement>(null);
 
   const handleOauth = async (provider: string) => {
-    window.open(`${API_URL}/auth/${provider}`, "_blank");
+    window.location.href = `${API_URL}/auth/${provider}`;
   };
 
   const handleSubmit = async () => {
@@ -34,7 +33,6 @@ const Login: NextPage = () => {
       },
       body: JSON.stringify({ email, password, name }),
     };
-    //const resp = await (await fetch(`${API_URL}/register`, options)).json();
     const resp = await fetch(`${API_URL}/register`, options);
 
     /* handle unsuccessful login */
@@ -65,11 +63,15 @@ const Login: NextPage = () => {
           ref={passwordCheckRef}
         />
         <p>or</p>
-        <button className="appleBtn" onClick={() => handleOauth("apple")}>
+        <button
+          type="button"
+          className="appleBtn"
+          onClick={() => handleOauth("apple")}
+        >
           <img src="../logo/apple.png" alt="" />
           <span>Sign in with Apple</span>
         </button>
-        <button onClick={() => handleOauth("google")}>
+        <button type="button" onClick={() => handleOauth("google")}>
           <img src="../logo/google.png" alt="" />
           <span>Sign in with Google</span>
         </button>
