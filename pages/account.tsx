@@ -1,10 +1,13 @@
+import useUser from "@lib/hooks/useUser";
 import type { NextPage } from "next";
-import Head from "next/head";
+//import Head from "next/head";
 import { useRouter } from "next/router";
 
 //@TODO: head fix, design / page layout fix
 const Account: NextPage = () => {
   const { push } = useRouter();
+  //store the email somehow
+  const user = useUser("a@a.com");
   return (
     <>
       <header>
@@ -30,10 +33,10 @@ const Account: NextPage = () => {
               src="https://media.karousell.com/media/photos/products/2022/2/8/big_floppa_1644303126_391dfcc8_progressive.jpg"
               alt=""
             />
-            <h3 id="name">Big Floppa</h3>
+            <h3 id="name">{user?.Name}</h3>
             <h3 className="age">21</h3>
           </div>
-          <p id="email">funny.ears@gmail.com</p>
+          <p id="email">{user?.Email}</p>
           <p id="mobile">+36 30 400 4000</p>
         </section>
         <form action="/" className="character">
